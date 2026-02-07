@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("./partials/head") %>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>homePage</title>
+</head>
+<body>
+    <%- include("./partials/nav") %>
+<!--.... JSON.stringify(Blogs) it convert js object/array in json string-->
+    <div class="container mt-3 ">
+    <div class=" row row-cols-4">
+        
+    <% Blogs.forEach(blogs => { %>
+        <div class="col">
+     <div class="card col" style="width: 18rem">
+     <img src="<%=blogs.coverImageUrl %>" class="card-img-top" alt="...">
+     <div class="card-body">
+     <h5 class="title"><%=Blogs.title %></h5>
+     <a href="/blog/<%=blogs._id%>" class="btn btn-primary">view</a>
+     </div>
+    </div>
+  </div>
+    <% }) %>
+    </div>
+    </div>
+    
+    <%- include("./partials/scripts") %>
+</body>
+</html>
