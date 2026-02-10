@@ -1,5 +1,5 @@
 const jwt=require("jsonwebtoken");
-const secret="SomeRandom764"
+const secret=process.env.JWT_SECRET
 function createTokenForUser(user){
 const payload={
     id:user._id,
